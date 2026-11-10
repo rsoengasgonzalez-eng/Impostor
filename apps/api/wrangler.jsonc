@@ -15,7 +15,7 @@
     {
       "binding": "DB",
       "database_name": "impostor-db",
-      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+      "database_id": "77d95115-bbc0-4a0a-8311-d63588c530f0",
       "migrations_dir": "migrations"
     }
   ],
