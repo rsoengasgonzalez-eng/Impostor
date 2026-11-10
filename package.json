@@ -1,0 +1,18 @@
+{
+  "name": "impostor-party",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev": "sh -c 'npm run dev -w @impostor/api & npm run dev -w @impostor/web; wait'",
+    "build": "npm run build -w @impostor/web && npm run check -w @impostor/api",
+    "check": "npm run check -w @impostor/web && npm run check -w @impostor/api",
+    "test": "npm run test -w @impostor/api",
+    "deploy:api": "npm run deploy -w @impostor/api",
+    "deploy:web": "npm run deploy -w @impostor/web"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
