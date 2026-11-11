@@ -10,7 +10,11 @@ describe('reglas del juego', () => {
   });
 
   it('asigna exactamente los roles esperados', () => {
-    const players = Array.from({ length: 13 }, (_, index) => ({ id: String(index), alive: true }));
+    const players: Array<{ id: string; alive: boolean; role?: 'citizen' | 'impostor' }> =
+  Array.from({ length: 13 }, (_, index) => ({
+    id: String(index),
+    alive: true,
+  }));
     const assigned = assignRoles(players, () => 0.42);
     expect(assigned.filter((player) => player.role === 'impostor')).toHaveLength(2);
   });
