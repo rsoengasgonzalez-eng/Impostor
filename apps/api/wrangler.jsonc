@@ -3,14 +3,25 @@
   "name": "impostor-party-api",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-01",
+
   "durable_objects": {
     "bindings": [
-      { "name": "ROOMS", "class_name": "GameRoom" }
+      {
+        "name": "ROOMS",
+        "class_name": "GameRoom"
+      }
     ]
   },
+
   "migrations": [
-    { "tag": "v1", "new_sqlite_classes": ["GameRoom"] }
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "GameRoom"
+      ]
+    }
   ],
+
   "d1_databases": [
     {
       "binding": "DB",
@@ -19,9 +30,11 @@
       "migrations_dir": "migrations"
     }
   ],
+
   "vars": {
-    "FRONTEND_URL": "http://localhost:5173"
+    "FRONTEND_URL": "https://impostor2.rsoengasgonzalez.workers.dev"
   },
+
   "observability": {
     "enabled": true
   }
