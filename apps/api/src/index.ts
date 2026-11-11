@@ -1,3 +1,4 @@
+import { DurableObject } from 'cloudflare:workers';
 import { assignRoles, evaluateWinner, makeCode, sanitizeAlias, tallyVotes, type Role, type Winner } from './logic';
 import { CATEGORY_NAMES, randomWord } from './words';
 
