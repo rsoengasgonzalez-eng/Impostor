@@ -160,7 +160,7 @@ export default {
 } satisfies ExportedHandler<Env>;
 
 export class GameRoom extends DurableObject<Env> {
-  private room: RoomState | null | undefined;
+  private room?: RoomState | null;
 
   constructor(ctx: DurableObjectState, env: Env) {
     super(ctx, env);
