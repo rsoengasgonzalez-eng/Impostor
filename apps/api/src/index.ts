@@ -166,11 +166,16 @@ export class GameRoom extends DurableObject<Env> {
     super(ctx, env);
   }
 
-  private async load(): Promise<RoomState | null> {
-    if (this.room !== undefined) return this.room;
-    this.room = (await this.ctx.storage.get<RoomState>('room')) ?? null;
+ private async load(): Promise<RoomState | null> {
+  if (this.room !== undefined) {
     return this.room;
   }
+
+  const storedRoom = await this.ctx.storage.get<RoomState>('room');
+  this.room = storedRoom ?? null;
+
+  return this.room;
+}
 
   private async save(): Promise<void> {
     if (this.room) await this.ctx.storage.put('room', this.room);
