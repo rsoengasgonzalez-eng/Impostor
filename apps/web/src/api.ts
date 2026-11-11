@@ -89,7 +89,7 @@ type ViteEnvironment = {
 const viteEnvironment = (import.meta as ImportMeta & { env?: ViteEnvironment }).env;
 const configuredApiUrl = viteEnvironment?.VITE_API_URL?.trim();
 
-export const API_URL = (configuredApiUrl || window.location.origin).replace(/\/+$/, '');
+export const API_URL = 'https://impostor.rsoengasgonzalez.workers.dev';
 
 function normalizeCode(code: string): string {
   return code.trim().toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
